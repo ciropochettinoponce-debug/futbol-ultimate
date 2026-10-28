@@ -1,0 +1,402 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #07140f;
+  --panel: #10231a;
+  --green: #b8ff5a;
+  --text: #f5f8f3;
+  --muted: #9aada1;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 80% 10%, #183d2b 0, transparent 38%),
+    var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 7%;
+  border-bottom: 1px solid #ffffff18;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.status, .eyebrow, .card-number, .card-link,
+.art-label, .coming-soon, footer {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.status {
+  color: var(--green);
+}
+
+main {
+  width: 86%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+  padding: 65px 0 80px;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-weight: bold;
+}
+
+h1 {
+  margin: 18px 0;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: .94;
+  letter-spacing: -4px;
+}
+
+h1 span {
+  color: var(--green);
+}
+
+.intro {
+  max-width: 410px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.primary-button {
+  margin-top: 20px;
+  padding: 16px 22px;
+  background: var(--green);
+  color: #10190d;
+  border: 0;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.primary-button:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+.stadium-art {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  border: 1px solid #ffffff20;
+  background:
+    radial-gradient(ellipse at 50% 15%, #e6ffb433, transparent 45%),
+    linear-gradient(#142d23, #07140f);
+}
+
+.stadium-lights {
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  right: 10%;
+  height: 45px;
+  background: #dfffad;
+  opacity: .45;
+  filter: blur(35px);
+}
+
+.pitch {
+  position: absolute;
+  inset: 75px 8% 35px;
+  border: 2px solid #b8ff5a80;
+  background: repeating-linear-gradient(
+    90deg,
+    #1a5634 0,
+    #1a5634 12.5%,
+    #16472c 12.5%,
+    #16472c 25%
+  );
+  transform: perspective(350px) rotateX(18deg);
+}
+
+.pitch-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 2px solid #caff9a70;
+}
+
+.center-circle {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: 2px solid #caff9a70;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box-line {
+  position: absolute;
+  width: 18%;
+  height: 48%;
+  top: 26%;
+  border: 2px solid #caff9a70;
+}
+
+.left-box {
+  left: 0;
+  border-left: 0;
+}
+
+.right-box {
+  right: 0;
+  border-right: 0;
+}
+
+.goal {
+  position: absolute;
+  top: 40%;
+  height: 20%;
+  width: 4%;
+  border: 2px solid #e6ffb3;
+}
+
+.left-goal {
+  left: -4%;
+}
+
+.right-goal {
+  right: -4%;
+}
+
+.ball {
+  position: absolute;
+  top: 45%;
+  left: 47%;
+  font-size: 44px;
+  filter: drop-shadow(0 0 15px #b8ff5a80);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-12px) rotate(15deg);
+  }
+}
+
+.art-label {
+  position: absolute;
+  bottom: 14px;
+  right: 18px;
+  color: #d9f8c6;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  margin: 8px 0;
+  font-size: clamp(22px, 3vw, 32px);
+}
+
+.coming-soon {
+  color: var(--muted);
+  border: 1px solid #ffffff25;
+  padding: 10px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 230px;
+  padding: 20px;
+  text-align: left;
+  color: var(--text);
+  background: #10231a;
+  border: 1px solid #ffffff18;
+  transition: transform .2s, border-color .2s;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--green);
+}
+
+.menu-card.featured {
+  background: linear-gradient(145deg, #23472c, #10231a);
+  border-color: #b8ff5a70;
+}
+
+.card-number {
+  color: var(--muted);
+}
+
+.card-icon {
+  margin: 24px 0 12px;
+  font-size: 28px;
+  color: var(--green);
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.card-description {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.card-link {
+  margin-top: auto;
+  padding-top: 22px;
+  color: var(--green);
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 28px 0;
+  padding: 18px;
+  background: #ffffff08;
+  border: 1px solid #ffffff18;
+}
+
+.notice-icon {
+  color: var(--green);
+  font-size: 25px;
+}
+
+.notice-title {
+  font-weight: bold;
+}
+
+#noticeText {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.close-notice {
+  margin-left: auto;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 26px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 25px 7%;
+  border-top: 1px solid #ffffff18;
+  color: var(--muted);
+}
+
+@media (max-width: 850px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 45px 0;
+  }
+
+  .stadium-art {
+    min-height: 260px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 18px 5%;
+  }
+
+  .status {
+    max-width: 100px;
+    line-height: 1.5;
+    text-align: right;
+  }
+
+  main {
+    width: 90%;
+  }
+
+  h1 {
+    letter-spacing: -2px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card {
+    min-height: 190px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
